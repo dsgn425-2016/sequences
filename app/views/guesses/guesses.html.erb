@@ -25,27 +25,25 @@
 </p>
 
 <ul>
-  <li>2, 4, 7 Yes!</li>
-  <li>4, 5, 7 Yes!</li>
-  <li>4, 2, 1 No.</li>
-  <li>1, 2, 3 Yes!</li>
-  <li>3, 9, 27 Yes!</li>
+  <li>
+    <%= @user_first %>,<%= @user_second %>,<%= @user_third %> Yes!
+  </li>
 </ul>
 
 <p>
   Enter a sequence:
 </p>
 
-<form class="" action="index.html" method="post">
+<form action="/all_guesses">
 
   <label for="first">First number:</label>
-  <input type="text" placeholder="The first number" id="first">
+  <input name="first_number" type="text" placeholder="The first number" id="first">
 
   <label for="second">Second number:</label>
-  <input type="text" placeholder="The second number" id="second">
+  <input name="second_number" type="text" placeholder="The second number" id="second">
 
   <label for="third">Third number:</label>
-  <input type="text" placeholder="The third number" id="third">
+  <input name="third_number" type="text" placeholder="The third number" id="third">
 
   <button>Check</button>
 
@@ -57,13 +55,13 @@
   When you think you know the rule, describe it in words below and then submit your answer. Make sure you’re right; you won’t get a second chance.
 </p>
 
-<form class="" action="index.html" method="post">
+<form action="/all_guesses">
 
   <label for="answer">Your answer:</label>
   <br>
-  <textarea id="answer" name="rule" rows="8" cols="40" placeholder="Describe what you think the rule is"></textarea>
+  <textarea id="answer" name="q" rows="8" cols="40" placeholder="Describe what you think the rule is"></textarea>
   <br>
-  <button type="button" name="button">I think I know it</button>
+  <button>I think I know it</button>
 
 </form>
 
