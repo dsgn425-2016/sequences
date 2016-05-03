@@ -1,0 +1,34 @@
+<h1>A Quick Puzzle to Test Your Problem Solving</h1>
+
+<p>Now it’s your turn. Enter a number sequence in the boxes below, and we’ll tell you whether it satisfies the rule or not. You can test as many sequences as you want.</p>
+
+<ul>
+  <% @list_of_guesses.each do |guess| %>
+  <li>
+    <%= guess.first %>,
+    <%= guess.second %>,
+    <%= guess.third %>,
+    <% if guess.first < guess.second && guess.second < guess.third %>
+    Yes!
+    <% else %>
+    No.
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<a href="https://www.google.com">Reset</a>
+
+<form action="http://localhost:3000/create_guess">
+  <label for="first">First number:</label>
+  <input id="first" type="text" placeholder="Enter your first number" name="first_number">
+
+  <label for="second">Second number:</label>
+  <input id="second"type="text" placeholder="Enter your second number" name="second_number">
+
+  <label for="third">Third number:</label>
+  <input id="third"type="text" placeholder="Enter your third number" name="third_number">
+
+  <button>Check</button>
+
+</form>
