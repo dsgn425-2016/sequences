@@ -1,0 +1,38 @@
+<h1>A Quick Puzzle to Test Your Problem Solving</h1>
+
+<p>
+  A short game sheds light on government policy, corporate America and why no one likes to be wrong.
+</p>
+
+<p>
+  Now it’s your turn. Enter a number sequence in the boxes below, and we’ll tell you whether it satisfies the rule or not. You can test as many sequences as you want.
+</p>
+
+<ul>
+  <% @list_of_guesses.each do |guess| %>
+  <li>
+    <%= guess.first %>,
+    <%= guess.second %>,
+    <%= guess.third %>
+
+    <% if guess.first < guess.second && guess.second < guess.third %>
+      Yes!
+    <% else %>
+      No.
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<form action="http://localhost:3000/all_guesses">
+  <label for="first">First number:</label>
+  <input id="first" type="text" placeholder="The first number" name="first_number">
+
+  <label for="second">Second number:</label>
+  <input id="second" type="text" placeholder="The second number" name="second_number">
+
+  <label for="third">Third number:</label>
+  <input id="third" type="text" placeholder="The third number" name="third_number">
+
+  <button>Check</button>
+</form>
