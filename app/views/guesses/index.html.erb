@@ -1,0 +1,53 @@
+<h1>A Quick Puzzle to Test Your Problem Solving</h1>
+<p>
+  A short game sheds light on government policy, corporate America and why no one likes to be wrong.
+</p>
+<p>
+  Here’s how it works:
+</p>
+<p>
+  We’ve chosen a rule that some sequences of three numbers obey — and some do not. Your job is to guess what the rule is.
+</p>
+<p>
+  We’ll start by telling you that the sequence 2, 4, 8 obeys the rule:
+</p>
+<p>
+  <ul><li>2, 4, 8 Obeys the rule</li></ul>
+</p>
+<p>
+  Now it’s your turn. Enter a number sequence in the boxes below, and we’ll tell you whether it satisfies the rule or not. You can test as many sequences as you want.
+</p>
+
+<ul>
+  <!-- <li>2, 4, 7 Yes!</li>
+  <li>8, 4, 7 No.</li> -->
+  <% @list_of_guesses.each do |guess| %>
+  <li>
+    <%= guess.first %>, <%= guess.second %>, <%= guess.third %>
+    <% if guess.first < guess.second && guess.second < guess.third %>
+    Yes!
+    <% else %>
+    No.
+    <% end %>
+  </li>
+  <% end %>
+  <!-- </ul>
+  <li><%= @first_num %>, <%= @second_num%>, <%= @third_num %> Yes!</li> -->
+</ul>
+
+<a href="http://google.com">Reset</a>
+
+<form action="http://localhost:3000/all_guesses">
+
+  <label for="first">First number:</label>
+  <input id="first" type="text" placeholder="The first number" name="first_number">
+
+  <label for="second">Second number:</label>
+  <input id="second" type="text" placeholder="The second number" name="second_number">
+
+  <label for="third">Third number:</label>
+  <input id="third" type="text" placeholder="The third number" name="third_number">
+
+  <button>Check</button>
+
+</form>
